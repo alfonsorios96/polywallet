@@ -1,0 +1,7 @@
+{
+  "name": "poly-wallet",
+  "short_name": "poly-wallet",
+  "description": "Simulador de educación financiera enfocada en el uso de créditos bancarios.",
+  "start_url": "/",
+  "display": "standalone"
+}
