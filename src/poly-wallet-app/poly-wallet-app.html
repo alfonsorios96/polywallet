@@ -2,12 +2,12 @@
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-if.html">
 <link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
 
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
 <link rel="import" href="../../bower_components/app-layout/app-header-layout/app-header-layout.html">
 <link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
 
 <link rel="import" href="../../bower_components/app-route/app-location.html">
 <link rel="import" href="../../bower_components/app-route/app-route.html">
@@ -18,7 +18,7 @@
 <link rel="import" href="./polywallet-icons.html">
 
 <link rel="import" href="../redux.html">
-<link rel="import" href="./emulador-financiero-app-styles.html">
+<link rel="import" href="./poly-wallet-app-styles.html">
 
 <!--
     Here views
@@ -28,59 +28,59 @@
 <dom-module id="poly-wallet-app">
     <template>
         <style include="poly-wallet-app-styles"></style>
-    </template>
 
-    <!--location & route-->
-    <template is="dom-if" if="[[ready]]">
-        <app-location route="{{route}}"></app-location>
-    </template>
-    <app-route
-            route="{{route}}"
-            pattern="/:page"
-            data="{{routeData}}"
-            tail="{{subroute}}">
-    </app-route>
+        <!--location & route-->
+        <template is="dom-if" if="[[ready]]">
+            <app-location route="{{route}}"></app-location>
+        </template>
+        <app-route
+                route="{{route}}"
+                pattern="/:page"
+                data="{{routeData}}"
+                tail="{{subroute}}">
+        </app-route>
 
-    <app-drawer-layout fullbleed narrow="{{narrow}}">
-        <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-            <app-header-layout has-scrolling-region>
-                <app-header>
-                    <h1>Menu</h1>
-                    <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
-                                   role="navigation">
-                        <a name="view1" href="view1">View One</a>
-                        <a name="view2" href="view2">View Two</a>
-                        <a name="view3" href="view3">View Three</a>
-                    </iron-selector>
+        <app-drawer-layout fullbleed narrow="{{narrow}}">
+            <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
+                <app-header-layout has-scrolling-region>
+                    <app-header>
+                        <h1>Menu</h1>
+                        <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
+                                       role="navigation">
+                            <a name="view1" href="view1">View One</a>
+                            <a name="view2" href="view2">View Two</a>
+                            <a name="view3" href="view3">View Three</a>
+                        </iron-selector>
+                    </app-header>
+                </app-header-layout>
+            </app-drawer>
+            <!-- Main content -->
+            <app-header-layout has-scrolling-region class="views">
+
+                <app-header slot="header" condenses reveals effects="waterfall">
+                    <app-toolbar>
+                        <paper-icon-button icon="polywallet-icons:menu" drawer-toggle></paper-icon-button>
+                        <div main-title>PolyWallet</div>
+                    </app-toolbar>
                 </app-header>
+
+                <iron-pages
+                        selected="{{routeData.page}}"
+                        attr-for-selected="name"
+                        fallback-selection="view404"
+                        role="main">
+                    <div name="view1">
+                        <h1>Vista 1</h1>
+                    </div>
+                    <div name="view2">
+                        <h1>Vista 2</h1>
+                    </div>
+                    <div name="view3">
+                        <h1>Vista 3</h1>
+                    </div>
+                </iron-pages>
             </app-header-layout>
-        </app-drawer>
-        <!-- Main content -->
-        <app-header-layout has-scrolling-region class="views">
-
-            <app-header slot="header" condenses reveals effects="waterfall">
-                <app-toolbar>
-                    <paper-icon-button icon="polywallet-icons:menu" drawer-toggle></paper-icon-button>
-                    <div main-title>PolyWallet</div>
-                </app-toolbar>
-            </app-header>
-
-            <iron-pages
-                    selected="{{routeData.page}}"
-                    attr-for-selected="name"
-                    fallback-selection="view404"
-                    role="main">
-                <div name="view1">
-                    <h1>Vista 1</h1>
-                </div>
-                <div name="view2">
-                    <h1>Vista 2</h1>
-                </div>
-                <div name="view3">
-                    <h1>Vista 3</h1>
-                </div>
-            </iron-pages>
-        </app-header-layout>
-    </app-drawer-layout>
+        </app-drawer-layout>
+    </template>
     <script src="./poly-wallet-app.js"></script>
 </dom-module>
