@@ -1,0 +1,44 @@
+{
+  "name": "polywallet",
+  "version": "0.0.0",
+  "description": "Simulador de educación financiera enfocada en el uso de créditos bancarios.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "gulp": "gulp",
+    "install": "bower cache clean && bower install",
+    "dev": "npm run install && gulp && node server.js",
+    "prepare": "npm run install && polymer build",
+    "prod": "npm run prepare && gulp config --env prod && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfonsorios96/polywallet.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alfonsorios96/polywallet/issues"
+  },
+  "homepage": "https://github.com/alfonsorios96/polywallet#readme",
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "dotenv": "4.0.0",
+    "eslint": "4.10.0",
+    "eslint-config-google": "0.7.1",
+    "eslint-plugin-html": "3.2.2",
+    "express": "4.16.2",
+    "gulp": "3.9.1",
+    "gulp-data": "1.2.1",
+    "gulp-rename": "1.2.2",
+    "gulp-template": "4.0.0",
+    "sw-precache": "5.2.0",
+    "winston-color": "1.0.0",
+    "yargs": "10.0.3"
+  },
+  "dependencies": {
+    "redux": "3.7.2"
+  }
+}
