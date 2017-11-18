@@ -15,8 +15,8 @@ Nosotros usamos [SemVer](http://semver.org/) para el versionamiento. Las version
 
 ## Authors
 
-* **Alfonso Ríos** -  [PurpleBooth](https://github.com/alfonsorios96)
-* **Yhoshua Ochoa** - [PurpleBooth](https://github.com/Yhoshua8a)
-* **Gerardo Díaz** -  [PurpleBooth](https://github.com/ngjaguardo98)
-* **Luiz Zepeda** -  [PurpleBooth](https://github.com/lui5-zm)
+* **Alfonso Ríos** -  [malforime](https://github.com/alfonsorios96)
+* **Yhoshua Ochoa** - [Yhoshua8a](https://github.com/Yhoshua8a)
+* **Gerardo Díaz** -  [ngjaguardo98](https://github.com/ngjaguardo98)
+* **Luiz Zepeda** -  [lui5-zm](https://github.com/lui5-zm)
  
