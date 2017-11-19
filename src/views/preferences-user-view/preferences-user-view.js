@@ -19,9 +19,9 @@ class PreferencesUserView extends ReduxMixin(Polymer.Element) {
 
         static get properties() {
             return {
-                user: {
-                    type: String,
-                    statePath: 'user',
+                catalog: {
+                    type: Array,
+                    statePath: 'catalog',
                 },
             };
         }
