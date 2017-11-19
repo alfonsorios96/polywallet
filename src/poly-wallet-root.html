@@ -3,7 +3,7 @@
 <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
 <link rel="import" href="./redux.html">
 <link rel="import" href="./poly-wallet-app/poly-wallet-app.html">
-<link rel="import" href="poly-wallet-login.html">
+<link rel="import" href="./poly-wallet-login.html">
 
 
 <dom-module id="poly-wallet-root">
@@ -14,10 +14,10 @@
               database-url="https://polywallet-6a2c6.firebaseapp.com/"
               api-key="AIzaSyDOwDwPvBD9ppUOye5CGjEtQ3qsa96-nn4">
         </firebase-app>
-        <template is="dom-if" if="{{!login_ok}}">
+        <template is="dom-if" if="[[!login_ok]]">
             <poly-wallet-login></poly-wallet-login>
         </template>
-        <template is="dom-if" if="{{login_ok}}">
+        <template is="dom-if" if="[[login_ok]]">
             <poly-wallet-app></poly-wallet-app>
         </template>
 
@@ -25,7 +25,7 @@
     <script>
         (function PolyWalletRootDefinition(customElements){
             'use strict'
-            class PolyWalletRoot extends ReduxMixinUser(Polymer.Element) {
+            class PolyWalletRoot extends ReduxMixin(Polymer.Element) {
                 static get is() { return 'poly-wallet-root'; }
                 static get properties() {
                     return {
@@ -35,7 +35,8 @@
                             observer: '_change'
                         },
                         login_ok: {
-                            type: Boolean
+                            type: Boolean,
+                            value: false
                         }
                     }
                 }

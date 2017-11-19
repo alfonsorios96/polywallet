@@ -11,12 +11,6 @@ class BillingStatementView extends ReduxMixin(Polymer.Element) {
             return 'billing-statement-view';
         }
 
-        connectedCallback() {
-            super.connectedCallback();
-            const state = this.getState();
-            console.log(state);
-        }
-
         static get properties() {
             return {
                 prop1: {

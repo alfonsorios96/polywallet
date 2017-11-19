@@ -11,18 +11,16 @@ class PreferencesUserView extends ReduxMixin(Polymer.Element) {
             return 'preferences-user-view';
         }
 
-        connectedCallback() {
-            super.connectedCallback();
-            const state = this.getState();
-            console.log(state);
-        }
-
         static get properties() {
             return {
                 catalog: {
                     type: Array,
-                    statePath: 'catalog',
+                    statePath: 'catalog'
                 },
+                user: {
+                    type: Object,
+                    statePath: 'user'
+                }
             };
         }
 

@@ -13,18 +13,16 @@ class TransactionSimulatorView extends ReduxMixin(Polymer.Element) {
 
         connectedCallback() {
             super.connectedCallback();
-            const state = this.getState();
-            console.log(state);
 
             this.addEventListener("dataExpenses", (e)=>{
-                
+
                 /*Detail trae
                    category,
                   subCategory,
                   expense,
                   expenseCount
                 */
-            }); 
+            });
         }
 
         static get properties() {

@@ -60,20 +60,28 @@
             }
         ]
     };
-    function user(state = initialState, action) {
+
+    function appReducer(state = initialState, action) {
+        let app = {
+            user: userReducer(state.user, action),
+            title: state.title,
+            catalog: state.catalog
+        };
+        return app;
+    }
+
+
+    function userReducer(state, action) {
       switch (action.type) {
         case 'UPDATE_USER': {
-            return Object.assign({}, state, { user: action.user });
+            return action.user;
         }
         default: {
           return state;
         }
       }
     }
-    const store = Redux.createStore((state = initialState, action) => state);
+    const store = Redux.createStore(appReducer);
     // Create the PolymerRedux mixin
     const ReduxMixin = PolymerRedux(store);
-    
-    const storeUser = Redux.createStore(user);
-    const ReduxMixinUser = PolymerRedux(storeUser);
 </script>

@@ -62,7 +62,6 @@
                         <paper-button raised on-tap="logout">Sign out</paper-button>
                         <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
                                        role="navigation">
-                            <a name="view1" href="view1">Configuración del simulador</a>
                             <a name="view2" href="view2">Estado de cuenta</a>
                             <a name="view3" href="view3">¿Cómo administrar mi crédito?</a>
                             <a name="view4" href="view4">Simulador</a>
@@ -83,7 +82,7 @@
                 <iron-pages
                         selected="{{routeData.page}}"
                         attr-for-selected="name"
-                        fallback-selection="view404"
+                        fallback-selection="view1"
                         role="main">
                     <div name="view1">
                         <preferences-user-view></preferences-user-view>
@@ -103,6 +102,6 @@
         </app-drawer-layout>
     </template>
 
-   
+
     <script src="./poly-wallet-app.js"></script>
 </dom-module>

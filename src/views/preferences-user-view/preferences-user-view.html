@@ -9,13 +9,13 @@
         <style include="preferences-user-view-styles"></style>
         <div class="container">
             <pw-user-card
-                photosrc="https://www.grandparentsofmedialiteracy.com/sites/default/files/default_images/dummy-image_0.jpg"
-                username="Nombre del Usuario"
-                email="user@domain.com">
+                    photosrc="[[user.photoURL]]"
+                    username="[[user.displayName]]"
+                    email="[[user.email]]">
             </pw-user-card>
             <pw-category-selection
-            catalog="[[catalog]]"
-          on-save-categories="saveCategories">
+                    catalog="[[catalog]]"
+                    on-save-categories="saveCategories">
             </pw-category-selection>
         </div>
     </template>

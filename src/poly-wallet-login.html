@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
-<link rel="import" href="redux.html">
+<link rel="import" href="./redux.html">
 
 
 
@@ -55,19 +55,17 @@
     <script>
         (function PolyWalletloginDefinition(customElements){
             'use strict'
-            class PolyWalletlogin extends ReduxMixinUser(Polymer.Element) {
+            class PolyWalletlogin extends ReduxMixin(Polymer.Element) {
                 static get is() { return 'poly-wallet-login'; }
                 static get properties() {
                     return {
                         user: {
                             type: Object,
-                            statePath: 'user',
-                            value: {},
-                            observer: 'userActive'
-
+                            statePath: 'user'
                         },
                         statusKnown: {
                             type: Object,
+                            value: {}
                         }
                     }
                 }
@@ -84,15 +82,14 @@
 
                 login(){
                     this.$.auth.signInWithPopup()
-                    .then(function(response) {return response })
-                    .catch(function(error) { console.log(error) });
-                }
-                userActive(){
-                    this.dispatch('update', this.user);
+                    .then((response) => {
+                        this.dispatch('update', response.user);
+                    })
+                    .catch((error) => { console.log(error) });
                 }
 
             }
-            customElements.define(PolyWalletlogin.is, PolyWalletlogin)
+            customElements.define(PolyWalletlogin.is, PolyWalletlogin);
         })(window.customElements);
     </script>
 </dom-module>
