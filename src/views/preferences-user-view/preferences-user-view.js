@@ -37,15 +37,22 @@ class PreferencesUserView extends ReduxMixin(Polymer.Element) {
                         type: 'USER_ADD_INCOMES',
                         incomes: incomes
                     }
+                },
+                createCreditCard() {
+                    return {
+                        type: 'CREATE_CREDIT_CARD'
+                    }
                 }
             }
         }
 
         saveCategories(event) {
             this.dispatch('addCategories', event.detail);
+            this.dispatch('createCreditCard');
         }
 
         saveIncomes(event){
+            this.$.dialog.open();
             this.dispatch('addIncomes', this.$.idIncomes.value);
         }
     }

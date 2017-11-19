@@ -15,24 +15,7 @@
 
         <div class="cardActionStatic"></div>
 
-        <pw-catalog sub-category-selected='[
-              {
-                "name" : "entretenimiento",
-                "Subcategory": "videojuegos"
-                },
-                {
-                "name" : "gastos",
-                "Subcategory": "agua"
-                },
-                {
-                "name" : "salud",
-                "Subcategory": "doctor"
-                },
-                {
-                "name" : "entretenimiento",
-                "Subcategory": "cine"
-                }
-            ]'></pw-catalog>
+        <pw-catalog sub-category-selected="[[categories]]"></pw-catalog>
     </template>
     <script src="./transaction-simulator-view.js"></script>
 </dom-module>
