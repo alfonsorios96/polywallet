@@ -88,11 +88,25 @@
                     </div>
 
                     <div name="view4">
-                      <transaction-simulator-view ></transaction-simulator-view>  
+                        <transaction-simulator-view></transaction-simulator-view>
                     </div>
                 </iron-pages>
             </app-header-layout>
         </app-drawer-layout>
     </template>
+
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDOwDwPvBD9ppUOye5CGjEtQ3qsa96-nn4",
+            authDomain: "polywallet-6a2c6.firebaseapp.com",
+            databaseURL: "https://polywallet-6a2c6.firebaseio.com",
+            projectId: "polywallet-6a2c6",
+            storageBucket: "polywallet-6a2c6.appspot.com",
+            messagingSenderId: "1039678211374"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="./poly-wallet-app.js"></script>
 </dom-module>

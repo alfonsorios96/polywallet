@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "public": "build/es6-unbundled",
+    "ignore": [
+      "firebase.json"
+    ]
+  }
+}
