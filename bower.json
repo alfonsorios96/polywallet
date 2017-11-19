@@ -1,7 +1,7 @@
 {
   "name": "polywallet",
   "main": "index.html",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "dependencies": {
     "polymer": "Polymer/polymer#2.2.0",
     "polymer-redux": "1.0.4",
