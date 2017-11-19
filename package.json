@@ -1,6 +1,6 @@
 {
   "name": "polywallet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simulador de educación financiera enfocada en el uso de créditos bancarios.",
   "main": "index.js",
   "directories": {

@@ -1,0 +1,23 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../redux.html">
+<link rel="import" href="./billing-statement-view-styles.html">
+
+<link rel="import" href="../../../bower_components/pw-account-summary/pw-account-summary.html">
+
+<dom-module id="billing-statement-view">
+    <template>
+        <style include="billing-statement-view-styles"></style>
+        <pw-account-summary credit-card='{
+            "user": {"name": "Alfonso Ríos"},
+                "cardnumber": "5204 1650 8320 1243",
+        "expireDate": "12/22",
+        "ccv": "993",
+        "statementDate": "22/10",
+        "dueDate": "17/11",
+        "minimumPayment": "4000",
+        "creditLimit": "10000",
+        "allowedCredit": "6000"
+        }'></pw-account-summary>
+    </template>
+    <script src="./billing-statement-view.js"></script>
+</dom-module>
