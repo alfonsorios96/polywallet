@@ -19,11 +19,11 @@ class TransactionSimulatorView extends ReduxMixin(Polymer.Element) {
             this.addEventListener("dataExpenses", (e)=>{
                 
                 /*Detail trae
-                   Category
-                   expense
-                   expenseCount
+                   category,
+                  subCategory,
+                  expense,
+                  expenseCount
                 */
-               this.dataExpense = e.detail; 
             }); 
         }
 
@@ -39,7 +39,6 @@ class TransactionSimulatorView extends ReduxMixin(Polymer.Element) {
         }
 
         _nextDate(){
-            console.log("pasar a siguiente fecha");
         }
 
 
