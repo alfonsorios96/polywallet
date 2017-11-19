@@ -1,0 +1,37 @@
+<link rel="import" href="../../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/pw-user-card/pw-user-card.html">
+<link rel="import" href="../../../bower_components/pw-category-selection/pw-category-selection.html">
+<link rel="import" href="../../redux.html">
+<link rel="import" href="./preferences-user-view-styles.html">
+
+<dom-module id="preferences-user-view">
+    <template>
+        <style include="preferences-user-view-styles"></style>
+        <div class="container">
+            <pw-user-card
+                photosrc="https://www.grandparentsofmedialiteracy.com/sites/default/files/default_images/dummy-image_0.jpg"
+                username="Nombre del Usuario"
+                email="user@domain.com">
+            </pw-user-card>
+            <pw-category-selection
+            catalog='[
+            {
+              "name": "Entretenimiento",
+              "headerImg": "https://i1.wp.com/pentavox.net/wp-content/uploads/2016/08/entretenimiento.jpg?fit=1800%2C1023",
+              "subCategory": ["Cine", "Videojuegos", "Parque de Diversiones"]
+            },{
+              "name":"Gastos Corriente",
+              "headerImg": "https://i1.wp.com/www.colombialegalcorp.com/wp-content/uploads/2016/03/consecuencias-no-pagar-renta-a-tiempo.jpg?fit=650%2C434",
+              "subCategory": ["Agua", "Celular", "Comida"]
+            },{
+              "name":"Educacion",
+              "headerImg": "https://mondgraduaciones.com/images/venta-y-renta-de-togas-1.jpg",
+              "subCategory": ["Colegiatura", "Materiales"]
+            }
+          ]'
+          on-save-categories="saveCategories">                
+            </pw-category-selection>
+        </div>
+    </template>
+    <script src="./preferences-user-view.js"></script>
+</dom-module>

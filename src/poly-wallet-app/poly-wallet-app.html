@@ -21,6 +21,7 @@
 <link rel="import" href="./poly-wallet-app-styles.html">
 
 <link rel="import" href="../views/wallet-tips-view/wallet-tips-view.html">
+<link rel="import" href="../views/preferences-user-view/preferences-user-view.html">
 <link rel="import" href="../views/billing-statement-view/billing-statement-view.html">
 
 
@@ -51,7 +52,7 @@
                         <h1>Menu</h1>
                         <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
                                        role="navigation">
-                            <a name="view1" href="view1">View One</a>
+                            <a name="view1" href="view1">Preference User</a>
                             <a name="view2" href="view2">Estado de cuenta</a>
                             <a name="view3" href="view3">Wallet Tips</a>
                         </iron-selector>
@@ -74,7 +75,7 @@
                         fallback-selection="view404"
                         role="main">
                     <div name="view1">
-                        <h1>Vista 1</h1>
+                        <preferences-user-view></preferences-user-view>
                     </div>
                     <div name="view2">
                         <billing-statement-view></billing-statement-view>
