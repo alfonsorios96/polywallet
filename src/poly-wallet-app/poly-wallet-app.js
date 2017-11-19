@@ -10,6 +10,14 @@
             return 'poly-wallet-app';
         }
 
+        static get properties() {
+            return {
+                flag: {
+                    type: Boolean,
+                    statePath: 'user.stepA'
+                }
+            };
+        }
 
         static get actions() {
             return {

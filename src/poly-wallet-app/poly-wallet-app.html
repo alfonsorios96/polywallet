@@ -61,9 +61,14 @@
                         <h1>Menu</h1>
                         <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
                                        role="navigation">
-                            <a name="view2" href="view2">Estado de cuenta</a>
-                            <a name="view3" href="view3">¿Cómo administrar mi crédito?</a>
-                            <a name="view4" href="view4">Simulador</a>
+                            <template is="dom-if" if="[[!flag]]">
+                                <a name="view1" href="view1">Configuración Inicial</a>
+                            </template>
+                            <template is="dom-if" if="[[flag]]">
+                                <a name="view2" href="view2">Estado de cuenta</a>
+                                <a name="view3" href="view3">¿Cómo administrar mi crédito?</a>
+                                <a name="view4" href="view4">Simulador</a>
+                            </template>
                         </iron-selector>
                         <paper-button raised on-tap="logout">Cerrar sesión</paper-button>
                     </app-header>

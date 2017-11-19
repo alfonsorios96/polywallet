@@ -1,7 +1,9 @@
 <script>
     // Create a Redux store
     let initialState = {
-        user: null,
+        user: {
+            stepA: false
+        },
         title: 'PolyWallet | Un consejero de confianza para tu economía',
         catalog: [
             {
@@ -84,6 +86,11 @@
             case 'USER_ADD_INCOMES': {
                 return Object.assign({}, state, {
                     incomes: action.incomes
+                });
+            }
+            case 'CREATE_CREDIT_CARD': {
+                return Object.assign({}, state, {
+                    stepA: true
                 });
             }
             default: {

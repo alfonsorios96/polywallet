@@ -1,6 +1,7 @@
 <link rel="import" href="../../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../../bower_components/pw-user-card/pw-user-card.html">
 <link rel="import" href="../../../bower_components/pw-category-selection/pw-category-selection.html">
+<link rel="import" href="../../../bower_components/isw-dialog/isw-dialog.html">
 <link rel="import" href="../../redux.html">
 <link rel="import" href="./preferences-user-view-styles.html">
 
@@ -19,6 +20,10 @@
                 </p>
                 <p>
                     <paper-button on-click="saveIncomes" raised>Guardar</paper-button>
+                    <isw-dialog id="dialog">
+                        <div>Categorias Guardadas</div>
+                        <paper-button dialog-dismiss>Cancel</paper-button>
+                    </isw-dialog>
                 </p>
             </pw-user-card>
             <pw-category-selection
