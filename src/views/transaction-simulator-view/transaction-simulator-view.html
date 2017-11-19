@@ -8,6 +8,13 @@
     <template>
         <style include="transaction-simulator-view-styles"></style>
 
+        <div class="cardAction">
+            <h2>Hoy [[toDay]]</h2>
+            <paper-button class="paper-button" on-tap="_nextDate">Siguiente fecha</paper-button>
+        </div>
+
+        <div class="cardActionStatic"></div>
+
         <pw-catalog sub-category-selected='[
               {
                 "name" : "entretenimiento",
@@ -26,9 +33,6 @@
                 "Subcategory": "cine"
                 }
             ]'></pw-catalog>
-        <paper-button class="paper-button" on-tap="_nextDate">Siguiente fecha</paper-button>    
-
-        
     </template>
     <script src="./transaction-simulator-view.js"></script>
 </dom-module>
