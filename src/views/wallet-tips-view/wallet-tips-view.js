@@ -13,10 +13,14 @@ class WalletTipsView extends ReduxMixin(Polymer.Element) {
 
         static get properties() {
             return {
-                prop1: {
-                    type: String,
-                    statePath: 'title',
+                incomes: {
+                    type: Number,
+                    statePath: 'user.incomes'
                 },
+                catalog: {
+                    type: Array,
+                    statePath: 'catalog'
+                }
             };
         }
     }
