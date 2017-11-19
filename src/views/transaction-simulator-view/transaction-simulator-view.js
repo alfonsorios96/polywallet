@@ -28,7 +28,11 @@ class TransactionSimulatorView extends ReduxMixin(Polymer.Element) {
         static get properties() {
             return {
                 toDay:{type:String, value:"19/11/2017"},
-                dataExpense:{type:Object, value:{}}
+                dataExpense:{type:Object, value:{}},
+                categories: {
+                    type: Array,
+                    statePath: 'user.userCategories'
+                }
             };
         }
 
