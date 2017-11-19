@@ -24,6 +24,8 @@
 <link rel="import" href="../views/preferences-user-view/preferences-user-view.html">
 <link rel="import" href="../views/billing-statement-view/billing-statement-view.html">
 
+<link rel="import" href="../views/transaction-simulator-view/transaction-simulator-view.html">
+
 
 <!--
     Here views
@@ -55,6 +57,7 @@
                             <a name="view1" href="view1">Preference User</a>
                             <a name="view2" href="view2">Estado de cuenta</a>
                             <a name="view3" href="view3">Wallet Tips</a>
+                            <a name="view4" href="view4">Expenses</a>
                         </iron-selector>
                     </app-header>
                 </app-header-layout>
@@ -82,6 +85,10 @@
                     </div>
                     <div name="view3">
                         <wallet-tips-view></wallet-tips-view>
+                    </div>
+
+                    <div name="view4">
+                      <transaction-simulator-view ></transaction-simulator-view>  
                     </div>
                 </iron-pages>
             </app-header-layout>
