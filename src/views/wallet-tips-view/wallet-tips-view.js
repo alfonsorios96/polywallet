@@ -14,7 +14,6 @@ class WalletTipsView extends ReduxMixin(Polymer.Element) {
         connectedCallback() {
             super.connectedCallback();
             const state = this.getState();
-            console.log(state);
         }
 
         static get properties() {

@@ -13,6 +13,10 @@
         static get properties() {
             return {};
         }
+        logout(){
+            console.log("logout")
+            return this.$.auth.signOut();
+        }
     }
 
     window.customElements.define(PolyWalletApp.is, PolyWalletApp);

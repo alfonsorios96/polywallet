@@ -14,9 +14,11 @@
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="./polywallet-icons.html">
 
+<link rel="import" href="../../bower_components/polymerfire/firebase-auth.html">
 <link rel="import" href="../redux.html">
 <link rel="import" href="./poly-wallet-app-styles.html">
 
@@ -35,7 +37,12 @@
 <dom-module id="poly-wallet-app">
     <template>
         <style include="poly-wallet-app-styles"></style>
-
+        <firebase-auth
+            id="auth"
+            user="{{user}}"
+            status-known="{{statusKnown}}"
+            provider="google">
+        </firebase-auth>
         <!--location & route-->
         <template is="dom-if" if="[[ready]]">
             <app-location route="{{route}}"></app-location>
@@ -52,6 +59,7 @@
                 <app-header-layout has-scrolling-region>
                     <app-header>
                         <h1>Menu</h1>
+                        <paper-button raised on-tap="logout">Sign out</paper-button>
                         <iron-selector selected="{{routeData.page}}" attr-for-selected="name" class="drawer-list"
                                        role="navigation">
                             <a name="view1" href="view1">Preference User</a>
@@ -95,18 +103,6 @@
         </app-drawer-layout>
     </template>
 
-    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDOwDwPvBD9ppUOye5CGjEtQ3qsa96-nn4",
-            authDomain: "polywallet-6a2c6.firebaseapp.com",
-            databaseURL: "https://polywallet-6a2c6.firebaseio.com",
-            projectId: "polywallet-6a2c6",
-            storageBucket: "polywallet-6a2c6.appspot.com",
-            messagingSenderId: "1039678211374"
-        };
-        firebase.initializeApp(config);
-    </script>
+   
     <script src="./poly-wallet-app.js"></script>
 </dom-module>

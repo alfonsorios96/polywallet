@@ -1,0 +1,98 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="redux.html">
+
+
+
+<dom-module id="poly-wallet-login">
+    <template>
+        <style>
+            .container{
+                display: flex;
+                justify-content: center;
+            }
+            .card {
+                margin-top: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: white;
+                border-radius: 6px;
+                box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+                padding: 10px;
+            }
+            img {
+                width: 300px;
+            }
+            .imageback{
+                z-index: -1;
+                position: fixed;
+                width: 100%;
+                top: -100px;
+                height: 117%;
+                left: 0;
+            }
+        </style>
+        <firebase-auth
+            id="auth"
+            user="{{user}}"
+            status-known="{{statusKnown}}"
+            provider="google">
+        </firebase-auth>
+        <div class="container">
+            <div class="card">
+                <h1>Bienvenido a Poly Wallet</h1>
+                <paper-button class="indigo" raised on-tap="login">
+                    Iniciar sesion con Google
+                </paper-button>
+                <img src="https://i.pinimg.com/736x/48/2c/05/482c05b98f10780f5a371c769b78cdfb--pictogram-flat-design.jpg">
+            </div>
+        </div>
+        <img class="imageback" src="https://i.ytimg.com/vi/9ezp2-UTxmg/maxresdefault.jpg">
+    </template>
+    <script>
+        (function PolyWalletloginDefinition(customElements){
+            'use strict'
+            class PolyWalletlogin extends ReduxMixinUser(Polymer.Element) {
+                static get is() { return 'poly-wallet-login'; }
+                static get properties() {
+                    return {
+                        user: {
+                            type: Object,
+                            statePath: 'user',
+                            value: {},
+                            observer: 'userActive'
+
+                        },
+                        statusKnown: {
+                            type: Object,
+                        }
+                    }
+                }
+                static get actions() {
+                    return {
+                        update(user) {
+                            return {
+                                type: 'UPDATE_USER',
+                                user: user
+                            }
+                        }
+                    }
+                }
+
+                login(){
+                    this.$.auth.signInWithPopup()
+                    .then(function(response) {return response })
+                    .catch(function(error) { console.log(error) });
+                }
+                userActive(){
+                    this.dispatch('update', this.user);
+                }
+
+            }
+            customElements.define(PolyWalletlogin.is, PolyWalletlogin)
+        })(window.customElements);
+    </script>
+</dom-module>

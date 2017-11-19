@@ -1,6 +1,7 @@
 <script>
     // Create a Redux store
     let initialState = {
+        user: null,
         title: 'PolyWallet | Un consejero de confianza para tu economía',
         catalog: [
             {
@@ -58,17 +59,22 @@
                 headerImg: "",
                 subCategory: ["Cine", "Teatro", "Conciertos", "Videojuegos", "Parque de Diversiones"]
             }
-        ],
-        user: {
-            uid: '',
-            username: '',
-            email: '',
-            userCategories: [],
-            creditCard: {},
-            income: 0
-        }
+        ]
     };
+    function user(state = initialState, action) {
+      switch (action.type) {
+        case 'UPDATE_USER': {
+            return Object.assign({}, state, { user: action.user });
+        }
+        default: {
+          return state;
+        }
+      }
+    }
     const store = Redux.createStore((state = initialState, action) => state);
     // Create the PolymerRedux mixin
     const ReduxMixin = PolymerRedux(store);
+    
+    const storeUser = Redux.createStore(user);
+    const ReduxMixinUser = PolymerRedux(storeUser);
 </script>
