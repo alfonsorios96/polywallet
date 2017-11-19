@@ -12,9 +12,18 @@
                     photosrc="[[user.photoURL]]"
                     username="[[user.displayName]]"
                     email="[[user.email]]">
+                <p>
+                    <paper-input type="number" id="idIncomes" label="Ingresos Mensuales" value="[[user.incomes]]">
+                        <div slot="prefix">$</div>
+                    </paper-input>
+                </p>
+                <p>
+                    <paper-button on-click="saveIncomes" raised>Guardar</paper-button>
+                </p>
             </pw-user-card>
             <pw-category-selection
                     catalog="[[catalog]]"
+                    not-category="Ahorro"
                     on-save-categories="saveCategories">
             </pw-category-selection>
         </div>

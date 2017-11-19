@@ -24,8 +24,29 @@ class PreferencesUserView extends ReduxMixin(Polymer.Element) {
             };
         }
 
+        static get actions() {
+            return {
+                addCategories(categories) {
+                    return {
+                        type: 'USER_ADD_SUBCATEGORIES',
+                        categories: categories
+                    }
+                },
+                addIncomes(incomes) {
+                    return {
+                        type: 'USER_ADD_INCOMES',
+                        incomes: incomes
+                    }
+                }
+            }
+        }
+
         saveCategories(event) {
-            console.log(event.detail);
+            this.dispatch('addCategories', event.detail);
+        }
+
+        saveIncomes(event){
+            this.dispatch('addIncomes', this.$.idIncomes.value);
         }
     }
     window.customElements.define(PreferencesUserView.is, PreferencesUserView);

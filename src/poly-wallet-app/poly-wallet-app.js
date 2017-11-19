@@ -5,17 +5,26 @@
      * @customElement
      * @polymer
      */
-    class PolyWalletApp extends Polymer.Element {
+    class PolyWalletApp extends ReduxMixin(Polymer.Element) {
         static get is() {
             return 'poly-wallet-app';
         }
 
-        static get properties() {
-            return {};
+
+        static get actions() {
+            return {
+                update(user) {
+                    return {
+                        type: 'UPDATE_USER',
+                        user: user
+                    }
+                }
+            }
         }
+
         logout(){
-            console.log("logout")
-            return this.$.auth.signOut();
+            this.$.auth.signOut();
+            this.dispatch('update', null);
         }
     }
 

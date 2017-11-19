@@ -72,15 +72,26 @@
 
 
     function userReducer(state, action) {
-      switch (action.type) {
-        case 'UPDATE_USER': {
-            return action.user;
+        switch (action.type) {
+            case 'UPDATE_USER': {
+                return action.user;
+            }
+            case 'USER_ADD_SUBCATEGORIES': {
+                return Object.assign({}, state, {
+                    userCategories: action.categories
+                });
+            }
+            case 'USER_ADD_INCOMES': {
+                return Object.assign({}, state, {
+                    incomes: action.incomes
+                });
+            }
+            default: {
+                return state;
+            }
         }
-        default: {
-          return state;
-        }
-      }
     }
+
     const store = Redux.createStore(appReducer);
     // Create the PolymerRedux mixin
     const ReduxMixin = PolymerRedux(store);
