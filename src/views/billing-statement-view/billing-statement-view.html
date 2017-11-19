@@ -3,6 +3,7 @@
 <link rel="import" href="./billing-statement-view-styles.html">
 
 <link rel="import" href="../../../bower_components/pw-account-summary/pw-account-summary.html">
+<link rel="import" href="../../../bower_components/pw-purchase-history/pw-purchase-history.html">
 
 <dom-module id="billing-statement-view">
     <template>
@@ -18,6 +19,33 @@
         "creditLimit": "10000",
         "allowedCredit": "6000"
         }'></pw-account-summary>
+        <pw-purchase-history dic-purchase='[{
+                            "date": "13/11/16",
+                            "concept": "levis",
+                            "mount": "7363"
+                        },
+                        {
+                            "date": "13/11/16",
+                            "concept": "polython",
+                            "mount": "92839.9833"
+                        },
+                        {
+                            "date": "13/11/16",
+                            "concept": "google",
+                            "mount": "88374.4"
+                        },
+                        {
+                            "date": "13/11/16",
+                            "concept": "polython",
+                            "mount": "746.09"
+                        },
+                        {
+                            "date": "13/11/16",
+                            "concept": "google",
+                            "mount": "928"
+                        }]'>
+                            
+            </pw-purchase-history>
     </template>
     <script src="./billing-statement-view.js"></script>
 </dom-module>
