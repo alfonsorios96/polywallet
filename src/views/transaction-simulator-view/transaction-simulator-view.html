@@ -8,20 +8,23 @@
     <template>
         <style include="transaction-simulator-view-styles"></style>
 
-        <pw-catalog catalog='[
+        <pw-catalog sub-category-selected='[
               {
-                "name": "Entretenimiento",
-                "headerImg": "https://i1.wp.com/pentavox.net/wp-content/uploads/2016/08/entretenimiento.jpg?fit=1800%2C1023",
-                "subCategory": ["Cine", "Videojuegos", "Parque de Diversiones"]
-              },{
-                "name":"Gastos Corriente",
-                "headerImg": "https://i1.wp.com/www.colombialegalcorp.com/wp-content/uploads/2016/03/consecuencias-no-pagar-renta-a-tiempo.jpg?fit=650%2C434",
-                "subCategory": ["Agua", "Celular", "Comida"]
-              },{
-                "name":"Educacion",
-                "headerImg": "https://mondgraduaciones.com/images/venta-y-renta-de-togas-1.jpg",
-                "subCategory": ["Colegiatura", "Materiales"]
-              }
+                "name" : "entretenimiento",
+                "Subcategory": "videojuegos"
+                },
+                {
+                "name" : "gastos",
+                "Subcategory": "agua"
+                },
+                {
+                "name" : "salud",
+                "Subcategory": "doctor"
+                },
+                {
+                "name" : "entretenimiento",
+                "Subcategory": "cine"
+                }
             ]'></pw-catalog>
         <paper-button class="paper-button" on-tap="_nextDate">Siguiente fecha</paper-button>    
 
