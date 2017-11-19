@@ -14,7 +14,7 @@
     "pw-catalog": "yhoshua8a/pw-catalog#1.0.1",
     "pw-purchase-history": "lui5-zm/pw-purchase-history#1.0.0",
     "pw-user-card": "ingjaguardo98/pw-user-card#1.0.1",
-    "pw-category-selection": "ingjaguardo98/pw-category-selection#1.0.1",
+    "pw-category-selection": "ingjaguardo98/pw-category-selection#1.0.2",
     "pw-account-summary": "alfonsorios96/pw-account-summary#1.0.0"
   },
   "devDependencies": {
